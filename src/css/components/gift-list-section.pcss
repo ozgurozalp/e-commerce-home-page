@@ -1,0 +1,102 @@
+section.gift-list {
+	padding: 3rem 1rem;
+	display: grid;
+	justify-items: center;
+	h3 {
+		font-family: 'Droid Serif', serif;
+		font-size: 1.625rem;
+		text-align: center;
+	}
+	.product-list {
+		display: grid;
+		gap: 1.6rem;
+		grid-template-columns: repeat(1, 1fr);
+		@media (--md) {
+			gap: 1.5rem;
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		& > figure {
+			position: relative;
+			picture {
+				display: block;
+				overflow: hidden;
+				img {
+					width: 100%;
+					transition: all 300ms ease-in-out;
+				}
+			}
+
+			figcaption {
+				font-family: Lato, sans-serif;
+				font-weight: bold;
+				margin-top: 0.5rem;
+				display: flex;
+				justify-content: center;
+
+				button {
+					padding: 0 1rem;
+					width: 85%;
+					height: 30px;
+					font-size: 1rem;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 10px;
+					white-space: nowrap;
+
+					@media (--sm) {
+						height: 40px;
+					}
+
+					@media (--xl) {
+						font-size: 1.374rem;
+						height: 40px;
+					}
+				}
+			}
+
+			& > a {
+				position: absolute;
+				inset: 0;
+			}
+			&.new::before {
+				position: absolute;
+				z-index: 2;
+				left: 0;
+				top: 0;
+				content: 'NEW';
+				font-family: Lato, sans-serif;
+				font-size: 1.125rem;
+				background: #3d7dca;
+				color: var(--color-white);
+				padding: 0.3rem 0.5rem;
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+			}
+			&.discount {
+				.discount-image {
+					position: absolute;
+					left: -10px;
+					top: -7px;
+					width: 50px;
+					@media (--sm) {
+						width: auto;
+					}
+				}
+			}
+			&:hover {
+				picture img {
+					transform: scale(1.1);
+				}
+
+				figcaption {
+					button {
+						transform: scale(1.03);
+					}
+				}
+			}
+		}
+	}
+}

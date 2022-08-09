@@ -1,0 +1,155 @@
+header {
+	--fixedHeaderHeight: 35px;
+	max-width: 100%;
+	padding: 0.5rem 1rem;
+	margin-top: var(--fixedHeaderHeight);
+
+	@media (--sm) {
+		padding: 0.6rem;
+		margin-top: 0;
+	}
+	& > * {
+		display: grid;
+		grid-template-areas:
+			'logo actions'
+			'nav nav';
+		gap: 1rem;
+		grid-template-columns: auto auto;
+		align-items: center;
+		height: 100%;
+
+		@media (--md) {
+			grid-template-areas: 'logo nav actions';
+			grid-template-columns: auto 1fr auto;
+		}
+
+		& > * {
+			flex-shrink: 0;
+			flex-grow: 0;
+		}
+	}
+	border-bottom: 0.5px solid var(--color-gray);
+
+	nav {
+		grid-area: nav;
+		display: flex;
+		justify-content: center;
+
+		overflow: auto;
+		scrollbar-width: none;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		@media (--md) {
+			display: revert;
+			justify-content: revert;
+			margin-left: 40px;
+		}
+
+		ul {
+			display: flex;
+			gap: 5px;
+			overflow: auto;
+			scroll-snap-type: x mandatory;
+			scrollbar-width: none;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+
+			li {
+				scroll-snap-align: start;
+				a {
+					display: block;
+					padding: 0.5rem 1rem;
+					color: var(--color-gray-2);
+					font-family: 'Droid Serif', serif;
+					font-style: italic;
+					transition: all 300ms;
+					border-radius: 5px;
+					font-size: 1.2rem;
+
+					@media (--sm) {
+						font-size: 0.8rem;
+					}
+				}
+				&:hover a {
+					color: var(--color-black);
+					background: rgba(0, 0, 0, 0.1);
+				}
+			}
+		}
+	}
+	.actions {
+		justify-self: flex-end;
+		grid-area: actions;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+
+		@media (--sm) {
+			gap: 1rem;
+		}
+		color: var(--color-gray-2);
+
+		& > a {
+			height: 2.6rem;
+			width: 2.6rem;
+			display: grid;
+			place-items: center;
+			border-radius: 50%;
+			transition: all 400ms;
+
+			svg {
+				width: 2em;
+				height: 2em;
+			}
+
+			&:hover {
+				background: rgba(0, 0, 0, 0.1);
+			}
+		}
+		.free-delivery {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			font-size: 1.4rem;
+			white-space: nowrap;
+
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			justify-content: center;
+			background: var(--color-white);
+			border-bottom: 0.5px solid var(--color-gray);
+			height: var(--fixedHeaderHeight);
+			z-index: 9999;
+
+			@media (--sm) {
+				position: static;
+				justify-content: revert;
+				background: none;
+				border: none;
+				height: revert;
+				gap: 0.5rem;
+				font-size: 1rem;
+			}
+
+			svg {
+				height: 2.18em !important;
+				aspect-ratio: 1;
+			}
+			.text {
+				p:first-child {
+					font-size: 0.875em;
+					font-weight: bold;
+				}
+				p:nth-child(2) {
+					font-size: 0.7em;
+				}
+			}
+		}
+	}
+}

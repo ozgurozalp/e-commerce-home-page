@@ -1,0 +1,19 @@
+{
+  "name": "despatchcloud",
+  "private": true,
+  "version": "0.0.0",
+  "author": "Özgür ÖZALP",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.4",
+    "normalize.css": "^8.0.1",
+    "postcss-nested": "^5.0.6",
+    "postcss-preset-env": "^7.4.3",
+    "prettier": "^2.6.2",
+    "vite": "^2.9.5"
+  }
+}

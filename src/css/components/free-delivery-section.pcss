@@ -1,0 +1,89 @@
+section.free-delivery {
+	display: flex;
+	justify-content: center;
+	padding-top: 10rem;
+	padding-inline: 3rem;
+	padding-bottom: 10rem;
+
+	@media (--sm) {
+		padding-inline: 5rem;
+	}
+
+	@media (--md) {
+		padding: 5rem 10rem 10rem 10rem;
+	}
+
+	.box {
+		background: var(--primary-color);
+		padding: 3rem 4rem;
+		color: var(--color-white);
+		text-align: center;
+		position: relative;
+
+		img {
+			position: absolute;
+			pointer-events: none;
+			user-select: none;
+			left: 50%;
+		}
+		img.top {
+			width: 100px;
+			top: 0;
+			transform: translateX(-50%) translateY(calc(-100% + 15px));
+
+			@media (--sm) {
+				width: auto;
+				transform: translateX(-50%) translateY(calc(-100% + 30px));
+				font-size: 1.81rem;
+			}
+		}
+		img.bottom {
+			bottom: 0;
+			transform: translateX(-50%) translateY(calc(100% - 15px));
+			width: 20px;
+			@media (--sm) {
+				width: auto;
+				transform: translateX(-50%) translateY(calc(100% - 30px));
+			}
+		}
+		img.left {
+			left: 0;
+			top: 50%;
+			transform: translate(-50%, -50%);
+
+			width: 40px;
+			@media (--sm) {
+				width: auto;
+			}
+		}
+		img.right {
+			left: 100%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+
+			width: 40px;
+			@media (--sm) {
+				width: auto;
+			}
+		}
+
+		p.title {
+			font-family: 'Droid Serif', serif;
+			font-size: 1.3rem;
+			@media (--md) {
+				font-size: 1.81rem;
+			}
+		}
+		p.desc {
+			font-family: Lato, sans-serif;
+			font-weight: 300;
+			font-style: italic;
+			font-size: 0.9rem;
+			margin-top: 1rem;
+
+			@media (--sm) {
+				font-size: 1.5rem;
+			}
+		}
+	}
+}

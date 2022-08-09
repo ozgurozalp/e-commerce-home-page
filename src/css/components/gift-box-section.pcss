@@ -1,0 +1,57 @@
+section.gift-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0 3rem;
+
+	@media (--md) {
+		flex-direction: row;
+		gap: 2rem;
+		padding: 3rem;
+	}
+
+	.left {
+		display: grid;
+		gap: 1rem;
+		order: 2;
+		@media (--md) {
+			order: 1;
+		}
+		p {
+			font-family: 'Droid Serif', serif;
+			font-size: 2.68rem;
+			color: var(--primary-color);
+			text-align: center;
+		}
+		a {
+			height: 30px;
+			font-size: 1rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 0.5rem;
+			padding: 0 2rem;
+			width: fit-content;
+			justify-self: center;
+			@media (--md) {
+				justify-self: flex-end;
+				height: 40px;
+			}
+		}
+	}
+	.right {
+		order: 1;
+		display: grid;
+		place-items: center;
+		img {
+			width: min(70%, 400px);
+			@media (--lg) {
+				width: revert;
+			}
+		}
+		@media (--md) {
+			order: 2;
+		}
+	}
+}
